@@ -3,7 +3,7 @@
 Test test test
 
 ## Architecture
-## ![Log-Architecture](aws-ct-processing-arch.png | width=100)
+## ![Log-Architecture](aws-ct-processing-arch.png)
 
 ## Prerequisites
 
