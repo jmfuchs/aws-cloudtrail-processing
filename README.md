@@ -1,2 +1,6 @@
-# aws-ct-processing-python
-A serverless application for processing AWS CloudTrail logs
+# Post Processing CloudTrail Logs with AWS Lambda
+
+Test test test
+
+# Architecture
+# ![Log-Architecture](aws-ct-processing-arch.png)
