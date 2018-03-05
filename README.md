@@ -3,6 +3,7 @@
 Test test test
 
 ## Architecture
+<img src="aws-ct-processing-arch.png" alt="Logging Architecture" style="width: 200px;"/>
 ## ![Log-Architecture](aws-ct-processing-arch.png)
 
 ## Prerequisites
