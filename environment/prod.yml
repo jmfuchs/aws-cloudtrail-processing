@@ -1,0 +1,7 @@
+# Production Variables
+#accountid: 794396630606 
+owner: jesfchs@amazon.com # Tag for resources
+description: CloudTrail Processing Service
+profile: sandbox # aws credential profile
+esipaddress: "162.244.139.57" # Sets the Service Policy to allow for access to Kibana
+newctbucket: jiffy-ct-main-sandbox # Needs to be globally unique
