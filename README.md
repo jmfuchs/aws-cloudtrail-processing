@@ -4,7 +4,7 @@ Test test test
 
 ## Architecture
 
-## ![Log-Architecture](aws-ct-processing-arch.png)
+## ![Log-Architecture](images/aws-ct-processing-arch.png)
 
 ## Prerequisites
 
