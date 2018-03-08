@@ -1,3 +1,6 @@
 # Development Variables
-profile: sls-dev
-kmskey: arn:aws:kms:us-east-1:xxxxxxxxxxxx:key/xxxx-xxxx-xxxx-xxxx-xxxxx
+owner: <Email Address> # Tag for resources
+description: CloudTrail Processing Service
+profile: dev # aws credential profile
+esipaddress: "<Your IP>" # Sets the Service Policy to allow for access to Kibana
+newctbucket: <Unique Bucket Name> # Needs to be globally unique

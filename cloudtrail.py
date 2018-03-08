@@ -7,40 +7,39 @@ import boto3
 import urllib
 import gzip
 
-# Set Region
-region = os.environ['AWS_REGION']
-
-# Set AWS Clients
-s3 = boto3.client('s3', region_name=region)
-es = boto3.client('es', region_name=region)
-
-# Retrieve Elasticsearch Domain Endpoint
-domain = es.describe_elasticsearch_domain(
-    DomainName=os.environ['ES_DOMAIN_NAME']
-)
-endpoint = domain['DomainStatus']['Endpoint']
-
-# Set Auth
-auth = AWS4Auth(
-    os.environ['AWS_ACCESS_KEY_ID'],
-    os.environ['AWS_SECRET_ACCESS_KEY'],
-    region,
-    'es',
-    session_token=os.environ['AWS_SESSION_TOKEN']
-)
-
-# Client Authentication
-es = Elasticsearch(
-    hosts=[{'host': endpoint, 'port': 443}],
-    http_auth=auth,
-    use_ssl=True,
-    verify_certs=True,
-    connection_class=RequestsHttpConnection
-)
-
 def process(event, context):
 
-    print(es.info())
+    # Set Region
+    region = os.environ['AWS_REGION']
+
+    # Set AWS Clients
+    s3 = boto3.client('s3', region_name=region)
+    es = boto3.client('es', region_name=region)
+
+    # Retrieve Elasticsearch Domain Endpoint
+    domain = es.describe_elasticsearch_domain(
+        DomainName=os.environ['ES_DOMAIN_NAME']
+    )
+    endpoint = domain['DomainStatus']['Endpoint']
+
+    # Set Auth
+    auth = AWS4Auth(
+        os.environ['AWS_ACCESS_KEY_ID'],
+        os.environ['AWS_SECRET_ACCESS_KEY'],
+        region,
+        'es',
+        session_token=os.environ['AWS_SESSION_TOKEN']
+    )
+
+    # Client Authentication
+    es = Elasticsearch(
+        hosts=[{'host': endpoint, 'port': 443}],
+        http_auth=auth,
+        use_ssl=True,
+        verify_certs=True,
+        connection_class=RequestsHttpConnection
+    )
+
     # Load SNS message from event
     message = json.loads(event['Records'][0]['Sns']['Message'])
 
@@ -58,6 +57,7 @@ def process(event, context):
     gzfile = gzip.open(path, "r")
     events = json.loads(gzfile.readlines()[0])["Records"]
 
+    # Iterate through events and push to Elasticsearch domain
     for i in events:
         if 'Describe' not in i["eventName"]:
             i["@timestamp"] = i["eventTime"]
