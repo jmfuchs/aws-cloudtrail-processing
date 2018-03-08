@@ -36,12 +36,11 @@ functions:
       - sns:
           arn:
             Fn::Join:
-              - ""
-              - - "arn:aws:sns:"
+              - ":"
+              - - "arn:aws:sns"
                 - Ref: "AWS::Region"
-                - ":"
                 - Ref: "AWS::AccountId"
-                - ":${self:service}-${self:provider.stage}-topic"
+                - "${self:service}-${self:provider.stage}-topic"
           topicName: ${self:service}-${self:provider.stage}-topic
 resources:
   Resources:
@@ -91,17 +90,15 @@ resources:
                     - "es:DescribeElasticsearchDomain"
                   Resource: 
                     - Fn::Join:
-                      - ""
+                      - ":"
                       - - "arn:aws:es"
                         - Ref: "AWS::Region"
-                        - ":"
                         - Ref: "AWS::AccountId"
                         - "domain/${self:service}-${self:provider.stage}"
                     - Fn::Join:
-                      - ""
+                      - ":"
                       - - "arn:aws:es"
                         - Ref: "AWS::Region"
-                        - ":"
                         - Ref: "AWS::AccountId"
                         - "domain/${self:service}-${self:provider.stage}/*"
                 - Effect: "Allow"
@@ -109,7 +106,9 @@ resources:
                     - "s3:GetObject"
                   Resource: 
                     - "arn:aws:s3:::${self:custom.environment.newctbucket}/*"
-    ElasticsearchDomain: 
+    ElasticsearchDomain:
+      DependsOn: 
+        - CloudTrailTopic 
       Type: "AWS::Elasticsearch::Domain"
       Properties:
         DomainName: ${self:service}-${self:provider.stage}
@@ -185,15 +184,6 @@ resources:
       Type: "AWS::SNS::Topic"
       Properties: 
         DisplayName: ${self:service}-${self:provider.stage}-topic
-        Subscription:
-          - Endpoint: 
-              - Fn::Join:
-                - ":"
-                - - "arn:aws:lambda"
-                  - Ref: "AWS::Region"
-                  - Ref: "AWS::AccountId"
-                  - "function:${self:service}-${self:provider.stage}"
-            Protocol: lambda
         TopicName: ${self:service}-${self:provider.stage}-topic
     CloudTrailTopicPolicy: 
       Type: "AWS::SNS::TopicPolicy"
