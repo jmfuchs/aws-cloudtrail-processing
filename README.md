@@ -22,12 +22,12 @@ After cloning the repo, change to the aws-ct-processing directory and run the fo
 pip install -r requirements.txt -t ./
 ```
 
-	> If you are using Mac OS X and installed Python using Homebrew, you'll need to add a setup.cfg in the aws-ct-processing directory with the following:
+> If you are using Mac OS X and installed Python using Homebrew, you'll need to add a setup.cfg in the aws-ct-processing directory with the following:
 
-	```
-	[install]
-	prefix=
-	```
+```
+[install]
+prefix=
+```
 
 ## Deploy
 
