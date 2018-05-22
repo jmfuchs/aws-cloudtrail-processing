@@ -29,8 +29,24 @@ pip install -r requirements.txt -t ./
 prefix=
 ```
 
+## Set Variables
+
+Open up environment/dev.yml and add in the appropiate variables. 
+
+>  You can add new files for different environments.
+
 ## Deploy
 
+To deploy the serverless application, run the following command:
 
+sls deploy -s dev -r us-west-2
+
+> If you've created different environment files that reference other aws profiles you can replace *dev* and *us-west-2* as necessary.
 
 ## Access
+
+After to the application has been successfully deployed you can view the logs in Kibana by doing the following:
+
+* Go to the [AWS Elasticsearch](https://us-west-2.console.aws.amazon.com/es/home?region=us-west-2) console.
+* Click on the Domain that starts with **sls-aws-ct-processing**.
+* Click the link next to **Kibana**.
