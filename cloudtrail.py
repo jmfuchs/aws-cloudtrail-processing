@@ -63,8 +63,12 @@ def process(event, context):
             i["@timestamp"] = i["eventTime"]
             i["eventSource"] = i["eventSource"].split(".")[0]
 
-            # Enrich Event (add additional Post-Processing as necessary)
+            ############# Add additional metadata to event #############
+            
+            # Example: Add AWS Account type
             i["accountType"] = "Production" 
+
+            ############################################################
 
             data = json.dumps(i)
             print(data)
