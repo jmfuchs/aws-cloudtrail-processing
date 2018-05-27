@@ -65,7 +65,9 @@ def process(event, context):
         
             data = json.dumps(i)
             print(data)
-  
+
+            # Enrich Event (add additional Post-Processing as necessary)
+            i["accountType"] = 'Production' 
            
             event_date = i["eventTime"].split("T")[0].replace("-", ".")
            
