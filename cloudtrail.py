@@ -62,12 +62,12 @@ def process(event, context):
         if 'Describe' not in i["eventName"]:
             i["@timestamp"] = i["eventTime"]
             i["eventSource"] = i["eventSource"].split(".")[0]
-        
-            data = json.dumps(i)
-            print(data)
 
             # Enrich Event (add additional Post-Processing as necessary)
-            i["accountType"] = 'Production' 
+            i["accountType"] = "Production" 
+
+            data = json.dumps(i)
+            print(data)
            
             event_date = i["eventTime"].split("T")[0].replace("-", ".")
            
