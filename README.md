@@ -38,7 +38,7 @@ prefix=
 
 ## Set Variables
 
-Open up environment/dev.yml and add in the appropiate variables. 
+Open up **environment/dev.yml** and add in the appropiate variables. 
 
 >  You can add new files for different environments.
 

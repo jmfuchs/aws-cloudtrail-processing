@@ -1,6 +1,6 @@
 # Development Variables
 owner: <Email Address> # Tag for resources
 description: CloudTrail Processing Service
-profile: dev # aws credential profile
-esipaddress: "<Your IP>" # Sets the Service Policy to allow for access to Kibana
+profile: default # aws credential profile
+esipaddress: "<Your IP>" # Sets the Service Policy to allow for access to Kibana (X.X.X.X/32)
 newctbucket: <Unique Bucket Name> # Needs to be globally unique
