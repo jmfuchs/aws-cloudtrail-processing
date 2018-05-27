@@ -50,7 +50,7 @@ To deploy the serverless application, run the following command:
 sls deploy -s dev -r us-west-2
 ```
 
-> If you've created different environment files that reference other aws profiles you can replace *dev* and *us-west-2* as necessary.
+> If you've created different environment files that reference other aws profiles or you want to deploy to different regions, you can replace *dev* and *us-west-2* as necessary.
 
 ## Access
 
