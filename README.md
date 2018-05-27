@@ -15,7 +15,7 @@ Below are the necessary prerequisites:
 
 ### Cloud9 Environment
 
-If you are having trouble installing any of the prerequisites, you can spin up an [AWS Cloud9](https://aws.amazon.com/cloud9/) environment, which is a cloud-based IDE that comes prepackaged with a number of essential packages.  After which you can run the following to install the Serverless Framework.
+If you have any trouble installing any of the prerequisites, you can spin up an [AWS Cloud9](https://aws.amazon.com/cloud9/) environment, which is a cloud-based IDE that comes prepackaged with a number of essential packages.  After which you can run the following to install the Serverless Framework.
 
 ```
 npm install -g serverless
