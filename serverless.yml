@@ -116,8 +116,8 @@ resources:
           DedicatedMasterEnabled: "true"
           InstanceCount: "2"
           ZoneAwarenessEnabled: "true"
-          InstanceType: "m3.medium.elasticsearch"
-          DedicatedMasterType: "m3.medium.elasticsearch"
+          InstanceType: "m4.large.elasticsearch"
+          DedicatedMasterType: "m4.large.elasticsearch"
           DedicatedMasterCount: "3"
         ElasticsearchVersion: "5.5"
         EncryptionAtRestOptions:
