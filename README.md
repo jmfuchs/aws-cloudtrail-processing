@@ -1,6 +1,6 @@
 # Processing CloudTrail Logs with AWS Lambda
 
-This serverless application creates the necessary resources and integrations for properly enabling and processing CloudTrail logs in your environment. The below architecture showcases how logs are stored, post-processed, and push to Elasticsearch.
+This serverless application creates the necessary resources and integrations for properly enabling and processing CloudTrail logs in your environment. The below architecture showcases how logs are stored, post-processed, and pushed to Elasticsearch.
 
 ## Architecture
 
