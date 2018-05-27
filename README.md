@@ -11,12 +11,11 @@ This serverless application creates the necessary resources and integrations for
 Below are the necessary prerequisites:
 
 *	[AWS Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)
-*	[pip](https://pip.pypa.io/en/stable/installing/)
 *	[Serverless Framework](https://serverless.com/)
 
 ### Cloud9 Environment
 
-If you are having trouble installing any of the prerequisites, you can spin up an [AWS Cloud9](https://aws.amazon.com/cloud9/) environment, which is a cloud-based IDE that comes prepackaged with a number of essential packages.  After which you can run the following to install the Serverless Framework, clone the repo, and then you're good to go.
+If you are having trouble installing any of the prerequisites, you can spin up an [AWS Cloud9](https://aws.amazon.com/cloud9/) environment, which is a cloud-based IDE that comes prepackaged with a number of essential packages.  After which you can run the following to install the Serverless Framework.
 
 ```
 npm install -g serverless
@@ -47,7 +46,9 @@ Open up environment/dev.yml and add in the appropiate variables.
 
 To deploy the serverless application, run the following command:
 
+```
 sls deploy -s dev -r us-west-2
+```
 
 > If you've created different environment files that reference other aws profiles you can replace *dev* and *us-west-2* as necessary.
 
