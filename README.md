@@ -10,9 +10,17 @@ This serverless application creates the necessary resources and integrations for
 
 Below are the necessary prerequisites:
 
+*	[AWS Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)
 *	[pip](https://pip.pypa.io/en/stable/installing/)
 *	[Serverless Framework](https://serverless.com/)
-*	[AWS Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)
+
+### Cloud9 Environment
+
+If you are having trouble installing any of the prerequisites, you can spin up an [AWS Cloud9](https://aws.amazon.com/cloud9/) environment, which is a cloud-based IDE that comes prepackaged with a number of essential packages.  After which you can run the following to install the Serverless Framework, clone the repo, and then you're good to go.
+
+```
+npm install -g serverless
+```
 
 ## Install Dependencies
 
