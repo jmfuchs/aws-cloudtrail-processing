@@ -23,13 +23,13 @@ npm install -g serverless
 
 ## Set Variables
 
-Open up **environment/dev.yml** and add in the appropiate variables. 
+Clone the repo and open up **environment/dev.yml** and add in the appropiate variables. 
 
 >  You can add new files for different environments.
 
 ## Install Dependencies
 
-After cloning the repo, change to the aws-ct-processing directory and run the following to install the dependencies:
+Ensure you are in the aws-ct-processing directory and run the following to install the dependencies:
 
 ```
 pip install -r requirements.txt -t ./
