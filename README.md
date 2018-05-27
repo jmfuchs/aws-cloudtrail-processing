@@ -59,3 +59,10 @@ After to the application has been successfully deployed you can view the logs in
 * Go to the [AWS Elasticsearch](https://us-west-2.console.aws.amazon.com/es/home?region=us-west-2) console.
 * Click on the Domain that starts with **sls-aws-ct-processing**.
 * Click the link next to **Kibana**.
+
+Once you are in Kibana:
+
+* For **Index name or pattern** type **logs-\***.
+* For **Time Filter field name** select **@timestamp**.
+* Click **Create**.
+* On the left navigation, click **Discover** to view your events.
