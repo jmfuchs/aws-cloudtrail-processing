@@ -120,6 +120,8 @@ resources:
           DedicatedMasterType: "m3.medium.elasticsearch"
           DedicatedMasterCount: "3"
         ElasticsearchVersion: "5.5"
+        EncryptionAtRestOptions:
+          Enabled: true
         EBSOptions: 
           EBSEnabled: true
           Iops: 0
