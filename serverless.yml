@@ -1,4 +1,4 @@
-service: sls-aws-ct-processing
+service: sls-aws-cloudtrail-processing
 
 frameworkVersion: ">=1.5.0 < 2.0.0"
 
@@ -23,7 +23,7 @@ custom:
   profile: ${self:custom.environment.profile}
 
 functions:
-  ct-process:
+  cloudtrail-process:
     handler: cloudtrail.process
     name: ${self:service}-${self:provider.stage}
     description: This function iterates through all CloudTrail logs as they are put into the primary S3 bucket, adds additional metadata, and puts them into AWS Elasticsearch
