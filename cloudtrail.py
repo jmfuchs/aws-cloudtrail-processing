@@ -62,7 +62,7 @@ def process(event, context):
         if 'Describe' not in i["eventName"]:
             i["@timestamp"] = i["eventTime"]
             i["eventSource"] = i["eventSource"].split(".")[0]
-            i["type"] = 'cloudtrail'
+            i["dataSource"] = 'cloudtrail'
 
             ############# Add additional metadata to event #############
             
