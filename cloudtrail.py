@@ -62,6 +62,7 @@ def process(event, context):
         if 'Describe' not in i["eventName"]:
             i["@timestamp"] = i["eventTime"]
             i["eventSource"] = i["eventSource"].split(".")[0]
+            i["type"] = 'cloudtrail'
 
             ############# Add additional metadata to event #############
             
@@ -77,7 +78,7 @@ def process(event, context):
            
             url = 'https://' + endpoint + '/logstash-' + event_date + '/cloudtrail/'
             index = 'logs-' + event_date
-            res = es.index(index=index, doc_type='cloudtrail', id=i['eventID'], body=data)
+            res = es.index(index=index, doc_type='aws', id=i['eventID'], body=data)
             print(res)
 
         else:
