@@ -42,16 +42,6 @@ i["accountType"] = "Production"
 ############################################################
 ``` 
 
-
-
-complement data points
-
- for contextual purposes, do dynamic lookups within a database or 3rd party 
-
-context and enrich data to achieve actionable intelligence
-
->  You can add new files for different environments.
-
 ## Install Dependencies
 
 Ensure you are in the aws-ct-processing directory and run the following to install the dependencies:
