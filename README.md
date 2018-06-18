@@ -27,6 +27,31 @@ Clone the repo and open up **environment/dev.yml** and add in the appropiate var
 
 >  You can add new files for different environments.
 
+## Enrich Logs
+
+Since the Lambda Function parses through every CloudTrail event, you can enrich the event by adding additional information to complement data points and add context.  This can either be static data hardcoded in the Lambda function or it can be dynamically pulled from a DynamoDB table or 3rd party threat intelligence. 
+
+Open **cloudtrail.py**, find the section of code below, and add additional metadata as necessary:
+
+```
+############# Add additional metadata to event #############
+            
+# Example: Add AWS Account type
+i["accountType"] = "Production" 
+
+############################################################
+``` 
+
+
+
+complement data points
+
+ for contextual purposes, do dynamic lookups within a database or 3rd party 
+
+context and enrich data to achieve actionable intelligence
+
+>  You can add new files for different environments.
+
 ## Install Dependencies
 
 Ensure you are in the aws-ct-processing directory and run the following to install the dependencies:
@@ -55,9 +80,11 @@ After to the application has been successfully deployed you can view the logs in
 
 Once you are in Kibana:
 
-* For **Index name or pattern** type **logs-\***.
-* For **Time Filter field name** select **@timestamp**.
-* Click **Create**.
+* Click **Management** in the left Navigation.
+* Click **Index Patterns**
+* For Step 1 (Define index pattern) type **logs-\***.
+* For Step 2 (Configure Settings) select **@timestamp**.
+* Click **Create Index Pattern**.
 * On the left navigation, click **Discover** to view your events.
 
 ## Cleanup

@@ -1,4 +1,4 @@
-service: sls-aws-cloudtrail-processing
+service: sls-aws-ct-processing
 
 frameworkVersion: ">=1.5.0 < 2.0.0"
 
@@ -26,7 +26,7 @@ functions:
   cloudtrail-process:
     handler: cloudtrail.process
     name: ${self:service}-${self:provider.stage}
-    description: This function iterates through all CloudTrail logs as they are put into the primary S3 bucket, adds additional metadata, and puts them into AWS Elasticsearch
+    description: This function parses through all CloudTrail logs as they are put into the primary S3 bucket, adds additional metadata, and pushes them into AWS Elasticsearch
     memorySize: 512
     timeout: 300
     role: CloudTrailProcessRole
@@ -119,7 +119,7 @@ resources:
           InstanceType: "m4.large.elasticsearch"
           DedicatedMasterType: "m4.large.elasticsearch"
           DedicatedMasterCount: "3"
-        ElasticsearchVersion: "5.5"
+        ElasticsearchVersion: "6.2"
         EncryptionAtRestOptions:
           Enabled: true
         EBSOptions: 
