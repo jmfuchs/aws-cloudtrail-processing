@@ -11,7 +11,8 @@ def process(event, context):
 
     # Set Region
     region = os.environ['AWS_REGION']
-
+    acc = '111111111111'
+    
     # Set AWS Clients
     s3 = boto3.client('s3', region_name=region)
     es = boto3.client('es', region_name=region)
